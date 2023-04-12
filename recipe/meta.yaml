@@ -22,6 +22,7 @@ requirements:
     - setuptools-scm
   run:
     - erddapy
+    - httpx
     - python >=3.6
 
 test:
