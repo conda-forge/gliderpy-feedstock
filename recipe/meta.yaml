@@ -1,6 +1,5 @@
 {% set name = "gliderpy" %}
-{% set version = "0.1.0" %}
-
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,22 +7,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gliderpy-{{ version }}.tar.gz
-  sha256: 6cf2ee1e7669c15769e48e245169caf68db59f63f43608c3db7e2398d094e7bd
+  sha256: fc00ebd9c7ca6d7c602a287f6feaac3b5e883d592749c9afdad0d0596037d580
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.8
+    - setuptools >=42
+    - setuptools-scm >=3.4
     - pip
-    - python >=3.6
-    - setuptools-scm
   run:
+    - python >=3.8
     - erddapy
     - httpx
-    - python >=3.6
+    - pandas
+    - xarray
 
 test:
   imports:
@@ -42,3 +44,4 @@ about:
 extra:
   recipe-maintainers:
     - callumrollo
+    - ocefpaf
