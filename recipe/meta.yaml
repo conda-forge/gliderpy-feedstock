@@ -1,5 +1,5 @@
 {% set name = "gliderpy" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gliderpy-{{ version }}.tar.gz
-  sha256: dfdf45d920c567062265080f3051a953e0bf063babe8f94ecd33a7a298a44213
+  sha256: a77313770a4f963a8e8ccb1a6540f3b2ad15ce82ad649037b3aa8611023e4aac
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - setuptools >=42
     - setuptools-scm >=3.4
+    - wheel
     - pip
   run:
-    - python >=3.8
+    - python >=3.10
     - erddapy
     - httpx
     - pandas
