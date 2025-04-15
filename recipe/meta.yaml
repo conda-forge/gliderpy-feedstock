@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "gliderpy" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gliderpy-{{ version }}.tar.gz
-  sha256: a77313770a4f963a8e8ccb1a6540f3b2ad15ce82ad649037b3aa8611023e4aac
+  sha256: ef5dfd4a022b9e33961a7feaf839d22be5d716c34e65b870a505c645b75b4385
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -25,8 +25,10 @@ requirements:
   run:
     - python >={{ python_min }}
     - erddapy
+    - gsw
     - httpx
     - pandas
+    - pandas-flavor
     - xarray
 
 test:
