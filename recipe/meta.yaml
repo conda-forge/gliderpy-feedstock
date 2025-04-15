@@ -25,6 +25,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - erddapy
+    - gsw
     - httpx
     - pandas
     - pandas-flavor
