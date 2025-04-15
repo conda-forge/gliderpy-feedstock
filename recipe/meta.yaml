@@ -27,6 +27,7 @@ requirements:
     - erddapy
     - httpx
     - pandas
+    - pandas-flavor
     - xarray
 
 test:
