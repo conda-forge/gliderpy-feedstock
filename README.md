@@ -146,6 +146,3 @@ Feedstock Maintainers
 * [@callumrollo](https://github.com/callumrollo/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
