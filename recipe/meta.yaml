@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "gliderpy" %}
-{% set version = "0.3.2" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gliderpy-{{ version }}.tar.gz
-  sha256: 94f93156f533b46d725ca175a762b936d713b9d86456f09b741db92ece7ce570
+  sha256: e6f431d2ffe320603b0a5831661aca4cd6553b978cf526ab250e0b72c8e88fc7
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - wheel
     - pip
   run:
+    - stamina
     - python >={{ python_min }}
     - erddapy
     - gsw
