@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "gliderpy" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gliderpy-{{ version }}.tar.gz
-  sha256: e6f431d2ffe320603b0a5831661aca4cd6553b978cf526ab250e0b72c8e88fc7
+  sha256: 80f4221f89d31acb7e7b4a83eeedf92358bc50db0c2b232d3943a8a3180fe4dd
 
 build:
   noarch: python
